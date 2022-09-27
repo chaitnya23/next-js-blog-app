@@ -32,6 +32,7 @@ function BlogCard({ _id, title, category,author_name ,profileImgUrl ,blogImgUrl 
         <Image
           height="30px"
           width="30px"
+          alt=""
           objectFit="contain"
           className="rounded-full ml-3"
           src={profileImgUrl?profileImgUrl:"/user.png"}
@@ -45,7 +46,7 @@ function BlogCard({ _id, title, category,author_name ,profileImgUrl ,blogImgUrl 
       </div>
 
       <div className="div flex justify-center mt-4">
-        <Link href={`http://localhost:3000/blogs/${_id}`}>
+        <Link href={`/blogs/${_id}`}>
           <button className="transition-all duration-500 hover:-translate-y-1 hover:bg-blue-500 p-2 rounded-3xl font-bold px-7 bg-blue-400 ">
             Read More
           </button>
