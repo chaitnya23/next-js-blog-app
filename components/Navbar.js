@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function () {
+export default function Navbar () {
   return (
     <div
       className=" sticky top-0  z-20 bg-white bg-opacity-40"
