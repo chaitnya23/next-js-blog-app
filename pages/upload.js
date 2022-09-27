@@ -44,7 +44,7 @@ export default function Upload() {
     try {
       setuploadLoading(true);
 
-      const res = await axios.post("http://localhost:3000/api/blogs/upload", {
+      const res = await axios.post("/api/blogs/upload", {
         author_name,
         bio,
         profileImgUrl,

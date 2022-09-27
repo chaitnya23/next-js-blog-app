@@ -89,6 +89,7 @@ export default function BlogId({ data, relatedPosts }) {
               <Image
                 height="30px"
                 width="30px"
+                alt=""
                 objectFit="contain"
                 className="rounded-full ml-3 "
                 src={data.profileImgUrl ? data.profileImgUrl : "/user.png"}
@@ -106,6 +107,7 @@ export default function BlogId({ data, relatedPosts }) {
             <div className="profile-img absolute  -translate-y-10 left-[45%]">
               <Image
                 height="80px"
+                alt=""
                 width="80px"
                 objectFit="contain"
                 className="rounded-full"
@@ -169,7 +171,7 @@ export default function BlogId({ data, relatedPosts }) {
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:3000/api/blogs");
+  const res = await fetch("/api/blogs");
   const data = await res.json();
 
   //defining all the possible paths
@@ -189,12 +191,12 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
-    `http://localhost:3000/api/blogs/${context.params.blogId}`
+    `/api/blogs/${context.params.blogId}`
   );
   const data = await res.json();
 
   const response = await axios.get(
-    `http://localhost:3000/api/category/${data.category}`
+    `/category/${data.category}`
   );
   const relatedPosts = response.data.slice(1, 4);
 
