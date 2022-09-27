@@ -17,9 +17,9 @@ export default function BlogId({ data, relatedPosts }) {
   });
 
   const [allComments, setAllComments] = useState(data.comments)
-  
 
-  
+
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -42,8 +42,8 @@ export default function BlogId({ data, relatedPosts }) {
       );
 
       if (res) {
-        setAllComments([...allComments ,commentData]);
-        
+        setAllComments([...allComments, commentData]);
+
         setcommentData({
           user: "",
           date: moment(new Date().getTime()).format("MMM DD ,YYYY"),
@@ -58,6 +58,7 @@ export default function BlogId({ data, relatedPosts }) {
 
   return (
     <div>
+    
       <div className="md:grid grid-cols-3">
         <div className="col-span-2 ">
           <div className=" m-8  bg-white rounded p-4 shadow-xl">
