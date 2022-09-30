@@ -7,7 +7,7 @@ import { MdDateRange } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
 import moment from "moment";
 import CommentSection from "../../components/CommentSection";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export default function BlogId({ data, relatedPosts }) {
   const [commentData, setcommentData] = useState({
@@ -32,7 +32,7 @@ export default function BlogId({ data, relatedPosts }) {
       const { user, date, comment } = commentData;
 
       const res = await axios.post(
-        "http://localhost:3000/api/blogs/postComment",
+        "https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs/postComment",
         {
           _id: data._id,
           user,
@@ -171,8 +171,8 @@ export default function BlogId({ data, relatedPosts }) {
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch("/api/blogs");
-  const data = await res.json();
+  const {data} = await axios.get("https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs");
+ console.log(data);
 
   //defining all the possible paths
   const paths = data.map((ele) => {
@@ -191,12 +191,12 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
-    `/api/blogs/${context.params.blogId}`
+    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs/${context.params.blogId}`
   );
   const data = await res.json();
 
   const response = await axios.get(
-    `/category/${data.category}`
+    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/category/${data.category}`
   );
   const relatedPosts = response.data.slice(1, 4);
 

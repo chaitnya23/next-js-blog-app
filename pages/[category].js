@@ -66,7 +66,7 @@ export default function CategoryBlogs ({ data }) {
 
 export const getServerSideProps = async (context) => {
   const res = await axios.get(
-    `http://localhost:3000/api/category/${context.query.category}`
+    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/category/${context.query.category}`
   );
 
   return {

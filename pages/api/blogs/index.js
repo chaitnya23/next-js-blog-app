@@ -10,6 +10,7 @@ export default async function handler(req, res) {
         const blogs = await Blog.find({});
         res.send(blogs);
     } catch (error) {
+        console.log("not able to send blogs");
         res.status(400).send("errror");
     }
 

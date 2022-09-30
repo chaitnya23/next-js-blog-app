@@ -95,7 +95,7 @@ export default function AllBlogs({ data, featuredPosts }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get("http://localhost:3000/api/blogs");
+  const res = await axios.get("https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs");
   const idx = Math.floor(Math.random() * res.data.length - 1);
 
   return {

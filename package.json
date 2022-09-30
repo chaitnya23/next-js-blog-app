@@ -2,6 +2,7 @@
   "name": "blog-app",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://next-blog-web-app-nlogger-zkjg-kd5kh98cm.vercel.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

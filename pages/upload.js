@@ -44,7 +44,7 @@ export default function Upload() {
     try {
       setuploadLoading(true);
 
-      const res = await axios.post("/api/blogs/upload", {
+      const res = await axios.post("https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs/upload", {
         author_name,
         bio,
         profileImgUrl,
