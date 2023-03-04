@@ -32,7 +32,7 @@ export default function BlogId({ data, relatedPosts }) {
       const { user, date, comment } = commentData;
 
       const res = await axios.post(
-        "https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs/postComment",
+        "/api/blogs/postComment",
         {
           _id: data._id,
           user,
@@ -156,6 +156,7 @@ export default function BlogId({ data, relatedPosts }) {
                   Post Comment
                 </button>
               </div>
+
             </div>
           </div>
 
@@ -171,7 +172,7 @@ export default function BlogId({ data, relatedPosts }) {
 }
 
 export const getStaticPaths = async () => {
-  const {data} = await axios.get("https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs");
+  const {data} = await axios.get("/api/blogs");
  console.log(data);
 
   //defining all the possible paths
@@ -191,12 +192,12 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
-    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs/${context.params.blogId}`
+    `/api/blogs/${context.params.blogId}`
   );
   const data = await res.json();
 
   const response = await axios.get(
-    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/category/${data.category}`
+    `/category/${data.category}`
   );
   const relatedPosts = response.data.slice(1, 4);
 

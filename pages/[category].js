@@ -44,7 +44,7 @@ export default function CategoryBlogs ({ data }) {
 
           </ul>
         </div>
-        <div className="bolgs col-span-2">
+        <div className="blogs col-span-2">
           {data &&
             data.map((ele, idx) => {
               return (
@@ -66,7 +66,7 @@ export default function CategoryBlogs ({ data }) {
 
 export const getServerSideProps = async (context) => {
   const res = await axios.get(
-    `https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/category/${context.query.category}`
+    `/api/category/${context.query.category}`
   );
 
   return {

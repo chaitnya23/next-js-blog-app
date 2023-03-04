@@ -2,7 +2,7 @@
   "name": "blog-app",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://next-blog-web-app-nlogger-zkjg-kd5kh98cm.vercel.app/",
+  "proxy": "https://next-blog-web-app-nlogger-zkjg-kd5kh98cm.vercel.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,6 +17,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
+    "react-scripts": "^5.0.1",
     "react-spinners": "^0.11.0",
     "vercel": "^28.4.2"
   },

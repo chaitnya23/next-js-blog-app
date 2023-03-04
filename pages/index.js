@@ -16,9 +16,9 @@ export default function AllBlogs({ data, featuredPosts }) {
         return ele.title.includes(search);
       })
     );
-
     
   };
+
 
   return (
     <div>
@@ -70,8 +70,8 @@ export default function AllBlogs({ data, featuredPosts }) {
             </Link>
           </ul>
         </div>
-        <div className="bolgs col-span-2">
-          {data &&
+        <div className="blogs col-span-2">
+          {blogs &&
             blogs.map((ele, idx) => {
               return (
                 <BlogCard
@@ -95,7 +95,7 @@ export default function AllBlogs({ data, featuredPosts }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get("https://next-blog-web-app-nlogger-zkjg-gyxd07qyk.vercel.app/api/blogs");
+  const res = await axios.get("/api/blogs");
   const idx = Math.floor(Math.random() * res.data.length - 1);
 
   return {

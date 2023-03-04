@@ -29,7 +29,7 @@ export default function Navbar () {
             <li className="nav-link">educational</li>
           </Link>
           <Link href="/sports">
-            <li className="nav-link">sports</li>
+            <li className="nav-link">sports</li> 
           </Link>
           <Link href="/technology">
             <li className="nav-link">technology</li>
